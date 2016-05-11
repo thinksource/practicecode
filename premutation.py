@@ -13,13 +13,14 @@ class Solution:
         self.search(sorted(nums), [], 0)
         return self.results
 
+//the java solution
 class jSolution:
 
     def subsets(self, nums):
-        ret=[]
+        ret = []
         if(len(nums) == 0):
             return ret
-        list=[]
+        list = []
         self.dfs(ret, list, sorted(nums),0)
         return ret
 
@@ -31,3 +32,17 @@ class jSolution:
             # print(list)
             self.dfs(ret, list,S, i+1)
             del list[-1]
+
+// Non Recursion
+class NRSolution:
+
+    def subsets(self, nums):
+        ret=[]
+        l = len(nums)
+        for i in range(0, 1 <<l):
+            subset=[]
+            for j in range(0, l):
+                if (i & 1 << j != 0):
+                    subset.append(nums[j]);
+            ret.append(subset.copy())
+        return ret
