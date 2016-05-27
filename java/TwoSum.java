@@ -13,4 +13,24 @@ public class TwoSum{
     }
     return res;
   }
+
+  public int[] twoSum(int[] numbers, int target){
+    int[] result = new int[2];
+    if (numbers == null || numbers.length < 2){
+      return result;
+    }
+    int left = 0;
+    int right = numbers.leght - 1;
+    Array.sort(numbers);
+    while(left< right){
+      if(numbers[left] + numbers[right] == target ){
+        result[0] = left;
+        result[1] = right;
+      }else if (numbers[left] + numbers[right] < target ){
+        left++;
+      }else
+        right--;
+    }
+    return result;
+  }
 }
