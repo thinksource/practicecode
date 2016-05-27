@@ -28,3 +28,7 @@ class Solution:
         if sum([l / end for l in L]) >= k:
             return end
         return start
+
+class Solution2:
+    """
+    """

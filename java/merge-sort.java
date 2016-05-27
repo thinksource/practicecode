@@ -1,8 +1,6 @@
 /**
- * ??????????????????????
- * - ????????????????????,????????????????????????
- * - ???????????:?????,?????,BAT???
- * - ??????????:http://www.jiuzhang.com/
+
+ * - http://www.lintcode.com/problem/merge-sort/
  */
 
 public class Solution {
@@ -15,12 +13,12 @@ public class Solution {
         int[] temp = new int[A.length];
         mergeSort(A, 0, A.length - 1, temp);
     }
-    
+
     private void mergeSort(int[] A, int start, int end, int[] temp) {
         if (start >= end) {
             return;
         }
-        
+
         int left = start, right = end;
         int mid = (start + end) / 2;
 
@@ -28,12 +26,12 @@ public class Solution {
         mergeSort(A, mid+1, end, temp);
         merge(A, start, mid, end, temp);
     }
-    
+
     private void merge(int[] A, int start, int mid, int end, int[] temp) {
         int left = start;
         int right = mid+1;
         int index = start;
-        
+
         // merge two sorted subarrays in A to temp array
         while (left <= mid && right <= end) {
             if (A[left] < A[right]) {
@@ -48,7 +46,7 @@ public class Solution {
         while (right <= end) {
             temp[index++] = A[right++];
         }
-        
+
         // copy temp back to A
         for (index = start; index <= end; index++) {
             A[index] = temp[index];

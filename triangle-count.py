@@ -10,5 +10,5 @@ class Solution:
                     ans+=right-left
                     right-=1
                 else:
-                    left++
+                    left+=1
         return ans
