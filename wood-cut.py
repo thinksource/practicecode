@@ -32,3 +32,4 @@ class Solution:
 class Solution2:
     """
     """
+    def somefunction():
