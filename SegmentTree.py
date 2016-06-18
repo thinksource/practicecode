@@ -4,6 +4,7 @@ class SegmentTreeNode:
         self.start, self.end=start, end
         self.left,self.right=None, None
 
+
 class SegmentTree:
 
     def build(self,start, end):
