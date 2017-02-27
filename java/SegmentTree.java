@@ -56,8 +56,8 @@ public class SegmentTree {
             heap[v].min = array[from];
         } else {
             //Build childs
-            build(2 * v, from, size / 2);
-            build(2 * v + 1, from + size / 2, size - size / 2);
+            build( v<<1, from, size / 2);
+            build(v<<1|1, from + size / 2, size - size / 2);
 
             heap[v].sum = heap[2 * v].sum + heap[2 * v + 1].sum;
             //min = min of the children
